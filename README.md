@@ -1,1 +1,9 @@
-# daily-planner
+# Daily Planner
+
+## Description 
+
+## Usage 
+
+## Visual
+
+## Contribution 
