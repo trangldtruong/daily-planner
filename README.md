@@ -1,7 +1,7 @@
 # Daily Planner
 
 ## Description 
-This application allows user to plan their work day. It shows the current time in the header and 
+This application allows user to plan their work day. It shows the current time on the top of the page.
 
 ## Usage 
 

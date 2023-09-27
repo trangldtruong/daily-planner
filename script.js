@@ -7,12 +7,14 @@ let time = document.getElementById('currentTime')
 date.textContent = dayjs().format('MMMM D, YYYY');
 time.textContent = dayjs().format('h:mm A')
 
-var hour = dayjs('H');
-
+var hour = dayjs().format('h a');
+console.log(hour);
+//apply past, present, future to each time block
 $('.time-block').each(function() {
   var currentTime = parseInt(hour);
   console.log(currentTime);
   var timeBlock = parseInt($(this).attr("id").split("-")[1]);
+
 if (timeBlock < currentTime) {
   $(this).addClass("past");
 } else if (timeBlock === currentTime) {
@@ -22,11 +24,21 @@ if (timeBlock < currentTime) {
 }
 });
 
-
+  
+//add an event listener to btn
 $(".saveBtn").click (function (event) {
-  event.preventDefault();
-  localStorage.getItem();
+  event.preventDefault()
+  let value = $(this).siblings('.description').val();
+  console.log(value);
+  let timeChosen = $(this).parent().attr('id');
+  console.log(timeChosen);
+  localStorage.setItem(timeChosen, value);
+
 })
+
+
+var hourNine = localStorage.getItem('hour-9');
+$("#hour-9 .description").val(hourNine)
 //$(function )
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
